@@ -5,7 +5,10 @@ import tempfile
 import time
 
 # Initialize OpenAI client
-client = OpenAI()
+client = OpenAI(
+    api.key=st.secrets["TOGETHER_API_KEY"],
+    base_url="https://api.together.xyz/v1"
+)
 
 def save_uploaded_file(uploaded_file):
     """Save uploaded file temporarily and return the path"""
